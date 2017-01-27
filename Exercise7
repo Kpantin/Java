@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class Exercise7 {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		
+		String[] words = {"planet", "that", "complete", "cool", "ignite", "calculated"};
+
+		System.out.println("Enter a word number (1-6): ");
+		int wordNumber = input.nextInt();
+		//Prompt user to guess the word
+		System.out.println("(Guess) Enter a letter in word " + words[wordNumber - 1]);
+		
+		//create an array of random words to display, display hidden word as "******"
+
+		
+		
+		
+		
+		//if user selects the correct letter..reveal the letter in correct location within word
+		
+		//If wrong letter selected System.out.println(" * " + "is not in the word");
+		
+		//Once all letters are revealed, display number of misses and ask user "Do you want to guess another word? Enter y or n>"
+
+	}
+
+}
