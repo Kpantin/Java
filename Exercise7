@@ -4,26 +4,22 @@ public class Exercise7 {
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
+	
+		String planet = "planet".replaceAll("[planet]", "*");
+		String tough = "tough".replaceAll("[tough]", "*");
+		String complete = "complete".replaceAll("[complete]", "*");
+		String cool = "cool".replaceAll("[cool]", "*");
+		String ignite = "ignite".replaceAll("[ignite]", "*");
+		String calculated = "calculated".replaceAll("[calculated]", "*");
 		
-		String[] words = {"planet", "that", "complete", "cool", "ignite", "calculated"};
+		String[] words = {planet, tough, complete, cool, ignite, calculated};
+		String word = words[(int) (Math.random() * words.length)];
+		
+		// PG 393 Modifying Strings
+	
+		System.out.println("(Guess) Enter a letter in word " + word);
+		
 
-		System.out.println("Enter a word number (1-6): ");
-		int wordNumber = input.nextInt();
-		//Prompt user to guess the word
-		System.out.println("(Guess) Enter a letter in word " + words[wordNumber - 1]);
-		
-		//create an array of random words to display, display hidden word as "******"
-
-		
-		
-		
-		
-		//if user selects the correct letter..reveal the letter in correct location within word
-		
-		//If wrong letter selected System.out.println(" * " + "is not in the word");
-		
-		//Once all letters are revealed, display number of misses and ask user "Do you want to guess another word? Enter y or n>"
-
-	}
-
-}
+	
+		}
+}	
