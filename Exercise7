@@ -4,22 +4,37 @@ public class Exercise7 {
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-	
-		String planet = "planet".replaceAll("[planet]", "*");
+		Scanner objScanner = new Scanner(System.in);
+		
+		/*String planet = "planet".replaceAll("[planet]", "*");
 		String tough = "tough".replaceAll("[tough]", "*");
 		String complete = "complete".replaceAll("[complete]", "*");
 		String cool = "cool".replaceAll("[cool]", "*");
 		String ignite = "ignite".replaceAll("[ignite]", "*");
-		String calculated = "calculated".replaceAll("[calculated]", "*");
+		String calculated = "calculated".replaceAll("[calculated]", "*");*/
 		
-		String[] words = {planet, tough, complete, cool, ignite, calculated};
+		String[] words = {"planet", "complete", "cool", "ignite", "calculated"}; //Word array
 		String word = words[(int) (Math.random() * words.length)];
 		
-		// PG 393 Modifying Strings
-	
-		System.out.println("(Guess) Enter a letter in word " + word);
 		
-
-	
+		char[] letterArray = new char[word.length()];
+		
+		for(int i = 0; i < word.length(); i++){
+			letterArray[i] = word.charAt(i);
 		}
-}	
+		
+		System.out.println("(Guess) Enter a letter in word " + word.length());
+		char userLetter = objScanner.next().charAt(0);
+		
+		
+		for (int i = 0; i < word.length(); i++) {
+			if (userLetter == letterArray[i]){
+				System.out.println();
+			}
+			
+		}
+		
+	}
+
+
+}
