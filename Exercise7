@@ -1,40 +1,23 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Exercise7 {
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		Scanner objScanner = new Scanner(System.in);
 		
-		/*String planet = "planet".replaceAll("[planet]", "*");
-		String tough = "tough".replaceAll("[tough]", "*");
-		String complete = "complete".replaceAll("[complete]", "*");
-		String cool = "cool".replaceAll("[cool]", "*");
-		String ignite = "ignite".replaceAll("[ignite]", "*");
-		String calculated = "calculated".replaceAll("[calculated]", "*");*/
+		System.out.print("Enter the number of students: ");
+		int[] students = new int[10];
 		
-		String[] words = {"planet", "complete", "cool", "ignite", "calculated"}; //Word array
-		String word = words[(int) (Math.random() * words.length)];
-		
-		
-		char[] letterArray = new char[word.length()];
-		
-		for(int i = 0; i < word.length(); i++){
-			letterArray[i] = word.charAt(i);
+		for (int i = 0; i < students.length; i++) {
+			students[i] = input.nextInt();
+		System.out.print("Enter " + students[i] + " scores: ");
 		}
 		
-		System.out.println("(Guess) Enter a letter in word " + word.length());
-		char userLetter = objScanner.next().charAt(0);
-		
-		
-		for (int i = 0; i < word.length(); i++) {
-			if (userLetter == letterArray[i]){
-				System.out.println();
-			}
-			
+		int[] scores = new int[11];
+		for (int j = 0; j < scores.length; j++) {
+			scores[j] = input.nextInt();
+			System.out.print(" Scores are: " + scores[j] + " ");
 		}
-		
 	}
-
-
 }
