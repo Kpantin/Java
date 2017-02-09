@@ -1,0 +1,51 @@
+
+public class JavaFinalQuiz {
+
+	public static void main(String[] args) {
+		/*
+		Question 1: java Welcome
+		Question 2: 	System.out.print("Hello ");
+					System.out.println(" There");
+		Dont do 3
+		Question 4: Floating point errors
+		Question 5: (Two Java primitive types that store floating point numbers) float and double 
+		Question 6: (WHat is the default initial value of a string instants variable) = null
+		Question 7: (Which of the following is a double selection control statement) = if else *single is = if
+		Question 8: (Which of the following is not a java keyword) = on Pg.1265
+		Question 9: (What would be the output of the following statement) = 
+		Question 10: (Which of the following is equivalent to this if statement)
+	 	Question 11: (Declaring main as ____ ) = static *means u cannot make on object of that method
+		Question 12: Execute the statement = *when u call a method ur passing arguments. When u declare a method in the method signature. Those are parameters 
+		Question 13: (Which statement is not true) = not true - The java api is not import declarations
+		Question 14: (How to declare an array) = int[] array = {0, 1, 2, 3, 4}; declare then initialize with data
+		Question 15: (Run the code..what is the result of that code. for-loop)
+		Question 16: (Run the code, what is the result)
+		Dont do 17
+		Question 18: (if object becomes null it becomes garbage collection)
+		Question 19: (A final field should be declared "static" if it is initialized in its declaration)
+		Question 20: (Inner classes and inheiratence)
+		Dont do 21
+		Question 22: (Which of the following statements is true) * inheiratence, superclass, subclass
+		Question 23: (An abstract class cannot be instantiated)
+		Dont do 24
+		Dont do 25 / Give it a shot
+		Question 26: (Exceptions - the code that might catch an exception must be enclosed in a try-catch block)
+		Question 27: (Shows u a catch block - What is the arithmatic catch block exception parameter?) catch(InputMismatchException e)
+		Question 28: (After an exception is handled control resumes to ___ this is know as the ____ ) the last catch block or the finally block. this is known as the "termination model"
+		Dont do 29
+		Dont do 30
+		Question 31: True of any gui (Together the appearance and the way the user interacts with the ) look and feel
+		Dont do 32
+		Dont do 33
+		Dont do 34
+		Question 35: (How many string objects are instantiated by the following code not including string literals)
+		Question 36: (Statements - What would be the equivelant. "index of" and "last index of") *Run THE CODE
+		Question 37: (String - Which of the following will create a different string from using replace and substrings )
+		Dont do 38
+		Question 39: (Every java applet is composed of at least one of these) = A public class method
+		Question 40: (The 3 typical tiers in a web application are) = User interface tier(GUI or View), Business logic tier(Back end code/ Source / Programming / MVC controller), Information tier(Data / Model)
+		Dont do 41-35
+		Question 53: URL 
+		Dont do 56-60
+	}*/
+}
