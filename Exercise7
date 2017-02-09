@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Exercise7 {
@@ -7,17 +6,42 @@ public class Exercise7 {
 		Scanner input = new Scanner(System.in);
 		
 		System.out.print("Enter the number of students: ");
-		int[] students = new int[10];
+		int st = input.nextInt();
+		int[] students = new int [st];
+		System.out.print("Emter " + st + " scores: ");
+		//int sc = input.nextInt();
+		int[] scores = new int[st];
+		//int[] scores = new int[st]; 
 		
-		for (int i = 0; i < students.length; i++) {
-			students[i] = input.nextInt();
-		System.out.print("Enter " + students[i] + " scores: ");
-		}
-		
-		int[] scores = new int[11];
-		for (int j = 0; j < scores.length; j++) {
-			scores[j] = input.nextInt();
-			System.out.print(" Scores are: " + scores[j] + " ");
+		for (int i = 0; i < scores.length; i++) {
+			scores[i] = input.nextInt();
+		}	
+		int max = scores[0];
+		int indexOfMax = 0;
+		for (int j = 1; j < scores.length; j++) {
+			if (scores[j] > max) {
+				max = scores[j];
+				indexOfMax = j;
+				
+				if (scores[j] >= max - 10) {
+					char A;
+				}
+				if (scores[j] >= max - 20) {
+					char B;
+				}
+				if (scores[j] >= max - 30) {
+					char C;
+				}
+				if (scores[j] >= max - 40) {
+					char D;
+				}
+				else {
+					char F;
+				}
+				System.out.println("Student " + students[0] + " score is " + scores[0] + " and grade is " + scores[j]);
+				System.out.println("Student " + students[1] + " score is " + scores[1] + " and grade is " + scores[j]);
+				System.out.println("Student " + students[2] + " score is " + scores[2] + " and grade is " + scores[j]);
+			}
 		}
 	}
 }
