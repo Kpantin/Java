@@ -5,43 +5,46 @@ public class Exercise7 {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		
+		// Prompt user to enter the number of students
 		System.out.print("Enter the number of students: ");
 		int st = input.nextInt();
-		int[] students = new int [st];
-		System.out.print("Emter " + st + " scores: ");
-		//int sc = input.nextInt();
-		int[] scores = new int[st];
-		//int[] scores = new int[st]; 
+		int[] scores = new int [st]; // Array created for scores 
 		
-		for (int i = 0; i < scores.length; i++) {
-			scores[i] = input.nextInt();
+		
+		// Prompt user to enter scores
+		System.out.print("Enter " + st + " scores: ");
+		for (int i = 0; i < scores.length; i++) { // Fill the array with user input scores
+			scores[i] = input.nextInt();	
 		}	
-		int max = scores[0];
-		int indexOfMax = 0;
-		for (int j = 1; j < scores.length; j++) {
-			if (scores[j] > max) {
-				max = scores[j];
-				indexOfMax = j;
-				
-				if (scores[j] >= max - 10) {
-					char A;
-				}
-				if (scores[j] >= max - 20) {
-					char B;
-				}
-				if (scores[j] >= max - 30) {
-					char C;
-				}
-				if (scores[j] >= max - 40) {
-					char D;
-				}
-				else {
-					char F;
-				}
-				System.out.println("Student " + students[0] + " score is " + scores[0] + " and grade is " + scores[j]);
-				System.out.println("Student " + students[1] + " score is " + scores[1] + " and grade is " + scores[j]);
-				System.out.println("Student " + students[2] + " score is " + scores[2] + " and grade is " + scores[j]);
+		
+		input.close();
+		int max = scores[0]; // Initialize variable for Max score
+		char gr = 0; // Initialize variable for grades
+		
+		for (int i = 1; i < scores.length; i++) { // Find the best score in the scores array and set it to "max"
+			if (scores[i] > max) {
+				max = scores[i];			
 			}
 		}
+		
+		for (int i = 0; i < scores.length; i++) { // Assign grades to the scores
+			if (scores[i] >= max - 10) { 
+					gr = 'A';
+				}
+					else if (scores[i] >= max - 20) {
+					gr = 'B';
+				}
+					else if (scores[i] >= max - 30) {
+					gr = 'C';
+				}
+					else if (scores[i] >= max - 40) {
+					gr = 'D';
+				}
+					else {
+					gr = 'F';
+				}
+			System.out.println("Student " + i + " score is " + scores[i] + " and grade is " + gr);
+			}			
 	}
 }
+
