@@ -2,31 +2,39 @@ import java.util.Scanner;
 
 public class Exercise8 {
 
-	public static void main(String[] args) {
-		double[][] m = sumColumn();
+		public static void main(String[] args) { // Main method calls the getArray() method 
+			double[][] matrix = getArray();
 
-	}
-	
-	public static double sumColumn(double[][] m, int columnIndex) {
-		Scanner scan = new Scanner(System.in);
-		
-		int[][] m = new int[3][4];
-		System.out.println("Enter a 3-by-4 matrix row by row: ");
-		
-		for(int i = 0; i < m.length; i++)
-			for(int j = 0; j < m[i].length;j++) 
-				m[i][j] = input.nextInt();
-			
-		return m;
-	}
-	
-	public static int sum(int[][] m) {
-		int total = 0;
-		for (int row = 0; row < m.length; row++) {
-			for (int column = 0; column < m[row].length; column++) {
-				total += m[row][column];
+			double sum = 0.0;  // double.."0.0"
+				
+			for(int column = 0; column < matrix[0].length; column++) {
+				sum = sumColumn(matrix, column); // Calls the sumColumn method and sets the parameters from matrix array and new int column variable
+				
+				System.out.println("Sum of the elements at column " + (column) + " is " + sum);
 			}
-		}	
-		return total;
+		}
+		
+		public static double[][] getArray() { 
+			Scanner input = new Scanner(System.in); // *Note to self ..Scanner has to be inside the new method to take input. 
+			double[][] newM = new double[3][4]; // new array to store data from this method
+			
+			System.out.println("Enter a " + newM.length + "-by-" + newM[0].length + " matrix row by row: ");
+				
+			for (int i = 0; i < newM.length; i++)
+					for (int j = 0; j < newM[0].length; j++)
+						newM[i][j] = input.nextDouble(); // user input: double
+				
+			input.close();	
+			return newM;
+		}
+		
+		public static double sumColumn(double[][] m, int columnIndex) { // Method for getting the sum of the columns
+			double total = 0.0; // Initialized variable to store column totals
+			
+			for (int row = 0; row < m.length; row++) {
+				total += m[row][columnIndex];
+			}
+			
+			return total;
+		}
 	}
-}
