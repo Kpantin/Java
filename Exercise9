@@ -1,0 +1,29 @@
+
+public class Stock {
+	public static void main(String[] args) {
+		Stock stock = new Stock();
+		System.out.printf(" - " + stock.symbol + " - " + stock.name + " -- Previous Closing Price: $" + stock.previousClosingPrice + "  /  New Current Price:  $" + stock.currentPrice + "  / Price-Change Percentage: " + "%.2f",stock.getChangePercent());
+	}
+	
+	private String symbol; // Create a string data field named "symbol"
+	private String name;	// Create a string data field named "name"
+	double previousClosingPrice; // Create a double data field named "previousClosingPrice"
+	double currentPrice;	// Create a double data field named "currentPrice"
+
+	
+	Stock() { // Create a constructor with the specified stock symbol and name
+		symbol = ("ORCL");
+		name = ("Oracle Corporation");
+		getChangePercent();
+	}
+
+	public double getChangePercent() { // Create a method named "getChangePercent()" that returns the percentage change from previousClosingPrice to currentPrice
+		double percentChanged;
+		double priceDifference;
+		currentPrice = 34.35;
+		previousClosingPrice = 34.50;
+		priceDifference = (currentPrice - previousClosingPrice); 
+		percentChanged = (priceDifference / previousClosingPrice) * 100;
+		return percentChanged;
+	}
+}
