@@ -11,19 +11,16 @@ public class Exercise9 {
 	}
 }
 
+
 public class Stock {
-	public static void main(String[] args) {
-		Stock stock = new Stock();
-		System.out.printf(" - " + stock.symbol + " - " + stock.name + " -- Previous Closing Price: $" + stock.previousClosingPrice + "  /  New Current Price:  $" + stock.currentPrice + "  / Price-Change Percentage: " + "%.2f",stock.getChangePercent());
-	}
 	
-	private String symbol; // Create a string data field named "symbol"
-	private String name;	// Create a string data field named "name"
+	public String symbol; // Create a string data field named "symbol"
+	public String name;	// Create a string data field named "name"
 	double previousClosingPrice; // Create a double data field named "previousClosingPrice"
 	double currentPrice;	// Create a double data field named "currentPrice"
 
 	
-	Stock() { // Create a constructor with the specified stock symbol and name
+	public Stock() { // Create a constructor with the specified stock symbol and name
 		symbol = ("ORCL");
 		name = ("Oracle Corporation");
 		getChangePercent();
@@ -38,4 +35,14 @@ public class Stock {
 		percentChanged = (priceDifference / previousClosingPrice) * 100;
 		return percentChanged;
 	}
+	
+	public double previousClosingPrice() {
+		return previousClosingPrice;
+	}
+	
+	public double currentPrice() {
+		return currentPrice;
+	}
 }
+
+//**** Main method to run program is in Exercise 9 ***
