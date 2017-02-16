@@ -1,0 +1,26 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Scanner;
+
+public class Exercise11 {
+	//Exercise 11.11 (Sort ArrayList)
+	public static void main(String[] args) {		
+		ArrayList<Integer> list = new ArrayList<Integer>(5); // Creates an Integer ArrayList object called 'list' with an initial size of 5 elements
+		System.out.println("Enter 5 numbers to sort(Hit 'enter' after each number): ");	
+		sort(list); // This method call must be in between both the System.out.println(s) to work properly
+		System.out.println("The numbers in increasing order are: " + list); 
+		
+	}
+	
+	public static void sort(ArrayList<Integer> list) {
+		Scanner input = new Scanner(System.in);	//Scanner must be inside method to use input.nextInt
+		list.add(input.nextInt()); // Add user input number to the ArrayList
+		list.add(input.nextInt());
+		list.add(input.nextInt());
+		list.add(input.nextInt());
+		list.add(input.nextInt());
+		input.close();
+		Collections.sort(list); // Collects and Sorts the elements in the list in ascending order 
+		return; // Returns the sort method
+	}
+}
