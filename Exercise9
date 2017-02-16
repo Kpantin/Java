@@ -1,4 +1,16 @@
 
+public class Exercise9 {
+	
+	public static void main(String[] args) {
+		
+		Stock stock = new Stock();
+		
+		System.out.println(" - " + stock.symbol + " - " + stock.name + " - ");
+		System.out.println("Previous Closing Price: $" + stock.previousClosingPrice + "  /  New Current Price:  $" + stock.currentPrice);
+		System.out.printf("Price-Change Percentage: " + "%.2f",stock.getChangePercent());
+	}
+}
+
 public class Stock {
 	public static void main(String[] args) {
 		Stock stock = new Stock();
