@@ -7,27 +7,27 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-
+// Exercise 14.1 (Figure 14.43a)
 public class Exercise14 extends Application{
 	@Override
 	public void start(Stage primaryStage) {
-		GridPane pane = new GridPane(); // Need to switch it to a Grid Pane
-		pane.setAlignment(Pos.TOP_LEFT);
-		pane.setPadding(new Insets(5, 5, 5, 5));
-		pane.setHgap(1);
-		pane.setVgap(1);
-		Image image = new Image("image/caflag.jpg");
+		GridPane pane = new GridPane(); 
+		pane.setAlignment(Pos.TOP_LEFT); // Node alignment starts in Top Left corner of pane
+		pane.setPadding(new Insets(5, 5, 5, 5)); // Padding (space from the borders)
+		pane.setHgap(1);	// Horizontal gap distances in between nodes
+		pane.setVgap(1);	// Vertical gap distances in between nodes
+		Image image = new Image("image/caflag.jpg");  // New object of flag images
 		Image image1 = new Image("image/chiflag.jpg");
 		Image image2 = new Image("image/gbflag.jpg");
 		Image image3 = new Image("image/usflag.jpg");
 
-		pane.add(new ImageView(image), 0, 0);
+		pane.add(new ImageView(image), 0, 0); // adds the images in a grid plane
 		pane.add(new ImageView(image1), 1, 0);
 		pane.add(new ImageView(image2), 0, 1);
 		pane.add(new ImageView(image3), 1, 1);
 
-		Scene scene = new Scene(pane, 525, 330);
-		primaryStage.setTitle("ShowImage");
+		Scene scene = new Scene(pane, 525, 330); // Size of the pane
+		primaryStage.setTitle("Exercise14_01"); 
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	}
