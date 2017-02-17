@@ -1,0 +1,45 @@
+
+import javafx.application.Application;
+import javafx.scene.Scene;
+//import javafx.scene.layout.HBox;
+import javafx.scene.layout.FlowPane;
+import javafx.geometry.Insets;
+import javafx.stage.Stage;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+
+public class Exercise14 extends Application{
+	@Override
+	public void start(Stage primaryStage) {
+		FlowPane pane = new FlowPane(); // Need to switch it to a Grid Pane
+		pane.setPadding(new Insets(1, 1, 1, 1));
+		pane.setHgap(1);
+		pane.setVgap(1);
+		Image image = new Image("image/cflag.jpg");
+		Image image1 = new Image("image/chiflag.jpg");
+		Image image2 = new Image("image/gbflag.jpg");
+		Image image3 = new Image("image/usflag.jpg");
+		ImageView imageView2 = new ImageView(image1);
+		pane.getChildren().addAll(new ImageView(image), new ImageView(image1));
+		
+		//pane.getChildren().
+		
+		//pane.getChildren().add(imageView2);
+		
+		ImageView imageView3 = new ImageView(image2);
+		pane.getChildren().add(imageView3);
+		
+		ImageView imageView4 = new ImageView(image3);
+		pane.getChildren().add(imageView4);
+		
+		
+		Scene scene = new Scene(pane, 525, 325);
+		primaryStage.setTitle("ShowImage");
+		primaryStage.setScene(scene);
+		primaryStage.show();
+	}
+	
+	public static void main(String[] args) {
+		Application.launch(args);
+	}
+}
