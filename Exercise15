@@ -1,0 +1,110 @@
+import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
+import javafx.stage.Stage;
+
+
+public class ControlCircle extends Application {
+	public CirclePane circlePane = new CirclePane();
+	
+	@Override
+	public void start(Stage primaryStage) {
+		// Hold two buttons in an HBox
+		HBox hBox = new HBox();
+		hBox.setSpacing(10);
+		hBox.setAlignment(Pos.CENTER);
+		Button btLeft = new Button("Left");
+		Button btRight = new Button("Right");
+		Button btUp = new Button("Up");
+		Button btDown = new Button("Down");
+		
+		hBox.getChildren().add(btLeft);
+		hBox.getChildren().add(btRight);
+		hBox.getChildren().add(btUp);
+		hBox.getChildren().add(btDown);
+		
+		// Create and register the handler
+		btLeft.setOnAction(new LeftHandler());
+		btRight.setOnAction(new RightHandler());
+		btUp.setOnAction(new UpHandler());
+		btDown.setOnAction(new DownHandler());
+		
+		BorderPane borderPane = new BorderPane();
+		borderPane.setCenter(circlePane);
+		borderPane.setBottom(hBox);
+		BorderPane.setAlignment(hBox, Pos.CENTER);
+		
+		// Create a scene and place it in the stage
+		Scene scene = new Scene(borderPane, 500, 500);
+		primaryStage.setTitle("ControlCircle");
+		primaryStage.setScene(scene);
+		primaryStage.show();
+	}
+	
+	public static void main(String[] args) {
+		Application.launch(args);
+	}
+	
+	class LeftHandler implements EventHandler<ActionEvent> {
+		@Override
+		public void handle(ActionEvent e) {
+			circlePane.left();
+		}
+	}
+	
+	class RightHandler implements EventHandler<ActionEvent> {
+		@Override
+		public void handle(ActionEvent e) {
+			circlePane.right();
+		}
+	}
+	
+	class UpHandler implements EventHandler<ActionEvent> {
+		@Override
+		public void handle(ActionEvent e) {
+			circlePane.up();
+		}
+	}
+	
+	class DownHandler implements EventHandler<ActionEvent> {
+		@Override
+		public void handle(ActionEvent e) {
+			circlePane.down();
+		}
+	}
+	
+}
+
+class CirclePane extends StackPane {
+	private Circle circle = new Circle(50);
+	
+	public CirclePane() {
+		getChildren().add(circle);
+		circle.setStroke(Color.BLACK);
+		circle.setFill(Color.WHITE);
+	}
+	
+	public void left() {
+		circle.setTranslateX(circle.getTranslateX() - 10);
+	}
+	
+	public void right() {
+		circle.setTranslateX(circle.getTranslateX() + 10);
+	}
+	
+	public void up() {
+		circle.setTranslateY(circle.getTranslateY() - 10);
+	}
+	
+	public void down() {
+		circle.setTranslateY(circle.getTranslateY() + 10);
+	}
+} 
