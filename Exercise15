@@ -11,33 +11,33 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
+// Exercise 15.3
 
-public class ControlCircle extends Application {
+public class Exercise15 extends Application {
 	public CirclePane circlePane = new CirclePane();
-	
 	@Override
 	public void start(Stage primaryStage) {
 		// Hold two buttons in an HBox
 		HBox hBox = new HBox();
 		hBox.setSpacing(10);
 		hBox.setAlignment(Pos.CENTER);
-		Button btLeft = new Button("Left");
+		Button btLeft = new Button("Left"); // Creates 4 labeled buttons
 		Button btRight = new Button("Right");
 		Button btUp = new Button("Up");
 		Button btDown = new Button("Down");
 		
-		hBox.getChildren().add(btLeft);
+		hBox.getChildren().add(btLeft);   // Adds the buttons to the pane
 		hBox.getChildren().add(btRight);
 		hBox.getChildren().add(btUp);
 		hBox.getChildren().add(btDown);
 		
 		// Create and register the handler
-		btLeft.setOnAction(new LeftHandler());
+		btLeft.setOnAction(new LeftHandler()); 
 		btRight.setOnAction(new RightHandler());
 		btUp.setOnAction(new UpHandler());
 		btDown.setOnAction(new DownHandler());
 		
-		BorderPane borderPane = new BorderPane();
+		BorderPane borderPane = new BorderPane(); // Creates a BorderPane
 		borderPane.setCenter(circlePane);
 		borderPane.setBottom(hBox);
 		BorderPane.setAlignment(hBox, Pos.CENTER);
@@ -53,7 +53,7 @@ public class ControlCircle extends Application {
 		Application.launch(args);
 	}
 	
-	class LeftHandler implements EventHandler<ActionEvent> {
+	class LeftHandler implements EventHandler<ActionEvent> { // Creates an Left EventHandler class
 		@Override
 		public void handle(ActionEvent e) {
 			circlePane.left();
@@ -83,7 +83,7 @@ public class ControlCircle extends Application {
 	
 }
 
-class CirclePane extends StackPane {
+class CirclePane extends StackPane { 
 	private Circle circle = new Circle(50);
 	
 	public CirclePane() {
@@ -92,7 +92,7 @@ class CirclePane extends StackPane {
 		circle.setFill(Color.WHITE);
 	}
 	
-	public void left() {
+	public void left() { // Method for moving the circle left
 		circle.setTranslateX(circle.getTranslateX() - 10);
 	}
 	
