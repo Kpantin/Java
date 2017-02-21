@@ -1,11 +1,13 @@
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Bounds;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.Border;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
@@ -14,8 +16,10 @@ import javafx.stage.Stage;
 // Exercise 15.3
 
 public class Exercise15 extends Application {
+	
 	public CirclePane circlePane = new CirclePane();
 	@Override
+	public BorderPane borderPane;
 	public void start(Stage primaryStage) {
 		// Hold two buttons in an HBox
 		HBox hBox = new HBox();
@@ -43,7 +47,7 @@ public class Exercise15 extends Application {
 		BorderPane.setAlignment(hBox, Pos.CENTER);
 		
 		// Create a scene and place it in the stage
-		Scene scene = new Scene(borderPane, 500, 500);
+		Scene scene = new Scene(borderPane, 300, 300);
 		primaryStage.setTitle("ControlCircle");
 		primaryStage.setScene(scene);
 		primaryStage.show();
@@ -84,27 +88,68 @@ public class Exercise15 extends Application {
 }
 
 class CirclePane extends StackPane { 
-	private Circle circle = new Circle(50);
+	public final double radius = 20;
+	private double x = radius, y = radius;
+	private double dx = 1, dy = 1;
+	private Circle circle = new Circle(x, y, radius);
+	
 	
 	public CirclePane() {
 		getChildren().add(circle);
 		circle.setStroke(Color.BLACK);
 		circle.setFill(Color.WHITE);
+		x += dx;
+		y += dy;
+		circle.setCenterX(x);
+		circle.setCenterY(y);
+		
 	}
 	
 	public void left() { // Method for moving the circle left
-		circle.setTranslateX(circle.getTranslateX() - 10);
+		if (x < radius || x > getWidth() - radius) {
+			circle.setTranslateX(circle.getTranslateX() - 0);
+		}
+		else circle.setTranslateX(circle.getTranslateX() - 10);
 	}
 	
+
 	public void right() {
 		circle.setTranslateX(circle.getTranslateX() + 10);
 	}
 	
 	public void up() {
-		circle.setTranslateY(circle.getTranslateY() - 10);
+		//circle.setTranslateY(circle.getTranslateY() - 10);
+		if (y < radius || y > getHeight() - radius) {
+			circle.setTranslateY(circle.getTranslateY() - 0);
+		}
+		else circle.setTranslateY(circle.getTranslateY() - 10);
 	}
 	
 	public void down() {
 		circle.setTranslateY(circle.getTranslateY() + 10);
 	}
+	
+    public boolean moveAcceptable(String direction)
+    {
+        Bounds bounds = BorderPane.getLayoutBounds();
+
+        if (direction.equalsIgnoreCase("up"))
+        {
+            return (circle.getCenterY() > (bounds.getMinY() + circle.getRadius()));
+        } else if (direction.equalsIgnoreCase("down"))
+        {
+            return circle.getCenterY() < (bounds.getMaxY() - circle.getRadius());
+        } else if (direction.equalsIgnoreCase("right"))
+        {
+            return circle.getCenterX() < (bounds.getMaxX() - circle.getRadius());
+        } else  //left
+        {
+            return circle.getCenterX() > (bounds.getMinX() + circle.getRadius());
+        }
+    }
+
+	
+	
+	
+	
 } 
