@@ -1,0 +1,72 @@
+public class TestCourse {
+public static void main(String[] args) {
+
+    // create two courses
+    Course course1 = new Course("Data Structures");
+    Course course2 = new Course("Database Systems");
+
+    // introduce the program
+    System.out.println("Creating Two Courses\n");
+    System.out.println("Adding 6 students to course 1");
+    System.out.println("Adding 3 students to course 2");
+
+
+    // add six students to course1
+    course1.addStudent("\nJohn Wayne");
+    course1.addStudent("\nFrank Beens");
+    course1.addStudent("\nEric Foley");
+    course1.addStudent("\nNicole Smith");
+    course1.addStudent("\nGreg Bower");
+    course1.addStudent("\nJenna May");
+    System.out.println();
+
+
+    // add three students to course2
+    course2.addStudent("\nChrista Sealy");
+    course2.addStudent("\nKaila Vincent");
+    course2.addStudent("\nMark Jacobs");
+
+
+    // output to the console
+    System.out.println ("Number of students in Course 1: " + course1.getNumberOfStudents() + "\nNames of Students are: ");
+    String [] students = course1.getStudents();
+
+    for (int i = 0; i < course1.getNumberOfStudents(); i++)
+        System.out.print(students[i]);
+
+
+    System.out.println ();
+    System.out.print("\nNumber of students in Course 2: " + course2.getNumberOfStudents() + "\nNames of Students are: \n");
+    String [] students1 = course2.getStudents();
+
+    for (int i = 0; i < course2.getNumberOfStudents(); i++)
+        System.out.print(students1[i]);
+
+    // output to the console how many students will be dropped from each class
+    System.out.println();
+    System.out.println("\nDropping 2 students from Course 1");
+
+    // drop some students.
+            course1.dropStudent("\nGreg Bower");
+            course1.dropStudent("\nFrank Beens"); 
+            System.out.println ("\nThe new number of students in Course 1: " + course1.getNumberOfStudents() + "\nNames of Students are: ");
+            for (int i = 0; i < course1.getNumberOfStudents(); i++)
+                System.out.print(students[i]);
+
+            System.out.println();
+            System.out.println("\nDropping 1 student from Course 2");
+            course2.dropStudent("\nKaila Vincent");        
+            System.out.println("\nThe new number of students in Course 2: " + course2.getNumberOfStudents() + "\nNames of Students are: ");
+            for (int i = 0; i < course2.getNumberOfStudents(); i++)
+                System.out.print(students1[i]);
+
+    // clear course2, but keep course1 as it currently stands
+            System.out.println();
+            System.out.println("\nClearing Course 2");
+            course2.clear();
+
+            System.out.println("\nFinal number of students in Course 1: " + course1.getNumberOfStudents());
+            System.out.println("\nFinal number of students in Course 2: " + course2.getNumberOfStudents());
+    }
+
+}
